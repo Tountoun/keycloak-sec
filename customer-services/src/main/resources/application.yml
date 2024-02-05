@@ -16,3 +16,9 @@ spring:
       ddl-auto: create-drop
     database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/till_realm
+          jwt-set-uri: http://localhost:8080/realms/till_realm/protocol/openid-connect/certs

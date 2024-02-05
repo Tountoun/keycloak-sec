@@ -1,0 +1,83 @@
+GET http://localhost:9090/actuator/heath
+
+###
+
+GET http://localhost:9090/actuator/heath
+
+###
+
+GET http://localhost:9090/actuator/heath
+
+###
+
+GET http://localhost:9090/actuator/heath
+
+###
+
+GET http://localhost:9090/actuator/heath
+
+###
+
+GET http://localhost:9090/api/customers
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSRV94VjI1dUE5X3N1VDFOZTgxZFlDamJFdURDZ3A1N3AyV3lIaUs5Y25vIn0
+
+###
+
+GET http://localhost:9090/api/customers
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSRV94VjI1dUE5X3N1VDFOZTgxZFlDamJFdURDZ3A1N3AyV3lIaUs5Y25vIn0
+
+###
+
+GET http://localhost:9090/api/customers
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSRV94VjI1dUE5X3N1VDFOZTgxZFlDamJFdURDZ3A1N3AyV3lIaUs5Y25vIn0
+
+###
+
+POST http://localhost:8080/realms/till_realm/protocol/openid-connect/token
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=keycloak-sec-client&username=till&password=till
+
+<> 2024-02-05T194640.200.json
+
+###
+
+POST http://localhost:8080/realms/till_realm/protocol/openid-connect/token
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&clien_id=keycloak-sec-client&username=till&password=till
+
+<> 2024-02-05T194526.401.json
+
+###
+
+POST http://localhost:8080/realms/till_realm/protocol/openid-connect/token
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&clien_id=keycloak-sec-client&username=till&password=till
+
+<> 2024-02-05T194520.401.json
+
+###
+
+POST http://localhost:8080/realms/till_realm/protocol/openid-connect/token
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&clien_id=keycloak-sec-client&username=rity&password=rity
+
+<> 2024-02-05T194429.401.json
+
+###
+
+GET http://localhost:9090/api/customers
+
+###
+
+GET http://localhost:9090/api/customers
+
+###
+
