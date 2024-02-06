@@ -1,0 +1,16 @@
+{
+  "code": "OK",
+  "data": {
+    "id": 3,
+    "name": "He",
+    "email": "he@gofar.com",
+    "phone": "0022863134511",
+    "address": {
+      "city": "Lome",
+      "road": "Grunitzky",
+      "postal_code": 141
+    },
+    "state": null
+  },
+  "message": "Success"
+}

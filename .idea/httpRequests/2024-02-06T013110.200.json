@@ -1,0 +1,16 @@
+{
+  "code": "OK",
+  "data": {
+    "id": 5,
+    "name": "they",
+    "email": "they@gofar.com",
+    "phone": "00022874216376",
+    "address": {
+      "city": "Sokode",
+      "road": "Okta road",
+      "postal_code": 53
+    },
+    "state": "ENABLED"
+  },
+  "message": "Success"
+}

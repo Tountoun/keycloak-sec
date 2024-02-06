@@ -1,0 +1,66 @@
+{
+  "code": "200",
+  "data": [
+    {
+      "id": 1,
+      "name": "Me",
+      "email": "me@gofar.com",
+      "phone": "+22865347612",
+      "address": {
+        "city": "Lome",
+        "road": "Avenue Sylvanus Olympio",
+        "postal_code": 15
+      },
+      "state": null
+    },
+    {
+      "id": 2,
+      "name": "You",
+      "email": "you@gofar.com",
+      "phone": "0022877336254",
+      "address": {
+        "city": "Notse",
+        "road": "Sanvi Road",
+        "postal_code": 23
+      },
+      "state": null
+    },
+    {
+      "id": 3,
+      "name": "He",
+      "email": "he@gofar.com",
+      "phone": "0022863134511",
+      "address": {
+        "city": "Lome",
+        "road": "Grunitzky",
+        "postal_code": 141
+      },
+      "state": null
+    },
+    {
+      "id": 4,
+      "name": "She",
+      "email": "she@gofar.com",
+      "phone": "+22803632276",
+      "address": {
+        "city": "Kara",
+        "road": "Road of To",
+        "postal_code": 53
+      },
+      "state": null
+    },
+    {
+      "id": 5,
+      "name": "they",
+      "email": "they@gofar.com",
+      "phone": "00022874216376",
+      "address": {
+        "city": "Sokode",
+        "road": "Okta road",
+        "postal_code": 53
+      },
+      "state": "ENABLED"
+    }
+  ],
+  "message": "Customers retrieved successfully"
+}

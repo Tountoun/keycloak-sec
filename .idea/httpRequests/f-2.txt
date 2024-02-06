@@ -1,0 +1,5 @@
+{
+  "code": "NOT_FOUND",
+  "data": null,
+  "message": "Failure: Customer not found"
+}

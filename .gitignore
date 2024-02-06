@@ -2,8 +2,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-customer-services/src/main/java/com/gofar/security/JwtAuthConverter.java
 customer-services/query_cust_services.http
+customer-services/http-client.private.env.json
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
