@@ -12,6 +12,12 @@ import org.springframework.security.config.annotation.web.configurers.AuthorizeH
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.RequestMatcher;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -25,10 +31,21 @@ public class SecurityConfig {
         return httpSecurity
                 .sessionManagement(scm -> scm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(amr -> amr.requestMatchers("/actuator/**").permitAll())
+                .cors(crs -> crs.configurationSource(corsConfigurationSource()))
+                .authorizeHttpRequests(amr -> amr.requestMatchers("/actuator/**", "/swagger-ui/**").permitAll())
                 .authorizeHttpRequests(ahr -> ahr.anyRequest().authenticated())
                 .oauth2ResourceServer( ors -> ors.jwt(jwtConfigurer -> jwtConfigurer.jwtAuthenticationConverter(authConverter)))
                 .build();
+    }
+
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of("*"));
+        configuration.setAllowedMethods(List.of("POST", "GET", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(List.of("*"));
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 
     @Autowired
