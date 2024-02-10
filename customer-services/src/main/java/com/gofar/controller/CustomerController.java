@@ -1,5 +1,7 @@
 package com.gofar.controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gofar.dto.CustomerDto;
 import com.gofar.entity.Customer;
 import com.gofar.exception.CustomerException;
@@ -9,10 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Type;
+import java.util.Map;
+
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping("api/customers")
 public class CustomerController {
 
     private CustomerService customerService;
@@ -66,7 +72,7 @@ public class CustomerController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping(value = "/{id}/disable")
+    @PutMapping(value = "{id}/disable")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> disable(@PathVariable Long id) {
         Response response;
@@ -79,7 +85,7 @@ public class CustomerController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping(value = "/{id}/enable")
+    @PutMapping(value = "{id}/enable")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> enable(@PathVariable Long id) {
         Response response;

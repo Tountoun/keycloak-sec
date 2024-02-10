@@ -3,20 +3,16 @@ package com.gofar.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Configuration
@@ -32,7 +28,7 @@ public class SecurityConfig {
                 .sessionManagement(scm -> scm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(crs -> crs.configurationSource(corsConfigurationSource()))
-                .authorizeHttpRequests(amr -> amr.requestMatchers("/actuator/**", "/swagger-ui/**").permitAll())
+                .authorizeHttpRequests(amr -> amr.requestMatchers(authorizeRequests()).permitAll())
                 .authorizeHttpRequests(ahr -> ahr.anyRequest().authenticated())
                 .oauth2ResourceServer( ors -> ors.jwt(jwtConfigurer -> jwtConfigurer.jwtAuthenticationConverter(authConverter)))
                 .build();
@@ -46,6 +42,15 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
+    }
+
+    String[] authorizeRequests() {
+        return new String[]{
+                "/actuator/**",
+                "/swagger-ui/**",
+                "/v3/api-docs/**",
+                "/api/auth/**"
+        };
     }
 
     @Autowired

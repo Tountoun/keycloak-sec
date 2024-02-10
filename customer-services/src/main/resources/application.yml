@@ -1,5 +1,7 @@
 server:
   port: 9090
+  ssl:
+    client-auth:
 
 spring:
   datasource:
@@ -22,3 +24,5 @@ spring:
         jwt:
           issuer-uri: http://localhost:8080/realms/till_realm
           jwt-set-uri: http://localhost:8080/realms/till_realm/protocol/openid-connect/certs
+authorization:
+  url: http://localhost:8080/realms/till_realm/protocol/openid-connect/token
