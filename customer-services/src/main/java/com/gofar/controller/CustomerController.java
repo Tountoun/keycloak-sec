@@ -1,21 +1,15 @@
 package com.gofar.controller;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gofar.dto.CustomerDto;
 import com.gofar.entity.Customer;
 import com.gofar.exception.CustomerException;
 import com.gofar.service.CustomerService;
-import com.gofar.utlis.Response;
+import com.gofar.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
-
-import java.lang.reflect.Type;
-import java.util.Map;
 
 @RestController
 @RequestMapping("api/customers")

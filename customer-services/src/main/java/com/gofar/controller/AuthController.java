@@ -1,7 +1,7 @@
 package com.gofar.controller;
 
 import com.gofar.service.AuthService;
-import com.gofar.utlis.Response;
+import com.gofar.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

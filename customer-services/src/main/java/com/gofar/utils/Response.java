@@ -1,4 +1,4 @@
-package com.gofar.utlis;
+package com.gofar.utils;
 
 public class Response {
     private String code;

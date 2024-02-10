@@ -1,4 +1,4 @@
-package com.gofar.utlis;
+package com.gofar.utils;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
